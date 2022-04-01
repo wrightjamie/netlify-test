@@ -11,13 +11,22 @@ backend:
 
 media_folder: static/assets
 public_folder: /assets
+
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: cms/blog
     create: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+
+pages:
+  - name: site
+    label: Site Data
+    folder: cms/site
+    create: true
+    fields:
+      - { name: site-title, label: Site Title }
