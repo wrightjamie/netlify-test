@@ -29,4 +29,5 @@ collections:
       - label: "SEO"
         name: "seo"
         file: "cms/settings/seo.yml"
-      { name: site-title, label: Site Title }
+        fields:
+          - { name: site-title, label: Site Title }
