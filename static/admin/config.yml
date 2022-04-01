@@ -23,8 +23,10 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
 
-  - name: site
-    label: Site Data
-    folder: cms/site
-    fields:
-      - { name: site-title, label: Site Title }
+  - name: settings
+    label: Settings
+    files:
+      - label: "SEO"
+        name: "seo"
+        file: "cms/settings/seo.yml"
+      { name: site-title, label: Site Title }
