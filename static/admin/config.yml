@@ -23,10 +23,8 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
 
-pages:
   - name: site
     label: Site Data
     folder: cms/site
-    create: true
     fields:
       - { name: site-title, label: Site Title }
