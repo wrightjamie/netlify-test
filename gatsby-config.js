@@ -22,7 +22,15 @@ module.exports = {
         name: "blog",
         path: "./blog/",
       },
-      __key: "blogs",
+      __key: "blog",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "settings",
+        path: "./src/pages/settings/",
+      },
+      __key: "settings",
     },
     "gatsby-transformer-remark",
   ],

@@ -28,6 +28,6 @@ collections:
     files:
       - label: "SEO"
         name: "seo"
-        file: "cms/settings/seo.yml"
+        file: "cms/settings/seo.md"
         fields:
           - { name: site-title, label: Site Title }
