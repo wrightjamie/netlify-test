@@ -1,0 +1,113 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(var(--max-width), 100%)
+    1fr;
+}
+.container > * {
+  grid-column: 2;
+}
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / -1 !important;
+}
+
+.parallax {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  perspective: 2px;
+  perspective-origin: 0 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+
+  &__wrapper {
+    transform-style: preserve-3d;
+  }
+  &__background {
+    transform: translateZ(-1px) scale(2);
+  }
+  &__foreground {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.invert {
+  color: var(--col-light);
+  background-color: var(--col-text);
+}
+
+.heading {
+  position: absolute;
+  inset: auto 0 0 0;
+  background-color: var(--col-img-cover);
+  color: var(--col-light);
+  padding-inline: var(--gap);
+  //z-index: 1;
+  font-variant: small-caps;
+  font-weight: var(--f-w-600);
+  transition: all 0.5s ease-in-out;
+}
+
+a:hover > .heading {
+  color: var(--col-heading);
+  text-decoration: underline;
+}
+
+.image-fill {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+a:hover > .image-fill {
+  transform: scale(1.05);
+}
+
+.button {
+  background-color: var(--bg-col, var(--col-red));
+  color: var(--col-light);
+  border-radius: 5px;
+  font-size: var(--fs, var(--f-s-500));
+  font-weight: var(--f-w-600);
+  font-variant: small-caps;
+  padding: calc(var(--gap) / 2) var(--gap);
+  line-height: var(--f-lh-heading);
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color: var(--col-white);
+    background-color: var(--bg-col-hover, var(--col-blue));
+  }
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.flex--center {
+  justify-content: center;
+  align-items: center;
+}
+.down-arrow {
+  font-size: var(--f-s-700);
+  font-weight: var(--f-w-600);
+}
+
+em {
+  font-size: var(--f-s-500);
+  font-weight: var(--f-w-500);
+}

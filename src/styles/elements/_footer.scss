@@ -1,0 +1,31 @@
+.footer {
+  bottom: 0;
+  background-color: var(--col-text);
+  scroll-snap-align: end;
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  h4 {
+    font-weight: var(--f-w-500);
+  }
+}
+[class^="footer__links"] {
+  flex: 0 1 20ch;
+  padding: var(--gap);
+  li:before {
+    content: "\00BB";
+    color: var(--col-accent);
+    padding-right: var(--half-gap);
+  }
+}
+
+.footer__copyright {
+  flex: 0 0 100%;
+  font-size: var(--f-s-300);
+  text-align: center;
+  p {
+    padding-top: 0;
+  }
+}

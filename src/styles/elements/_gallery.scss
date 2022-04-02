@@ -1,0 +1,16 @@
+.gallery {
+  margin-block: var(--gap);
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  &__item {
+    aspect-ratio: 5/3;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0 0 0 0;
+  }
+}

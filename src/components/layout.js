@@ -1,20 +1,26 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+import Header from "../components/header";
+import "../styles/style.scss";
 
 const Layout = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      markdownRemark(frontmatter: { templateKey: { eq: "settings-seo" } }) {
+        id
+        frontmatter {
+          title
+        }
+      }
+    }
+  `);
+
   return (
     <div>
-      <title>{pageTitle}</title>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+      <title>
+        {pageTitle} | {data.markdownRemark.frontmatter.title}
+      </title>
+      <Header headerName="The Page Header" menuLinks="" socialLinks="" />
       <main>
         <h1>{pageTitle}</h1>
         {children}

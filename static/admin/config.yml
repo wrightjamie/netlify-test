@@ -30,4 +30,10 @@ collections:
         name: "seo"
         file: "cms/settings/seo.md"
         fields:
-          - { name: site-title, label: Site Title }
+          - { name: siteTitle, label: Site Title }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "settings-seo",
+            }

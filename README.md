@@ -7,6 +7,40 @@
   Gatsby minimal starter
 </h1>
 
+## USeful stuff:
+
+##Query the frontmatter to select only one type of file (in this case settings-seo). In the Yaml file:
+
+- name: settings
+  label: Settings
+  files:
+  - label: "SEO"
+    name: "seo"
+    file: "cms/settings/seo.md"
+    fields:
+    - { name: siteTitle, label: Site Title }
+    - {
+      label: "Template Key",
+      name: "templateKey",
+      widget: "hidden",
+      default: "settings-seo",
+      }
+
+Graphql query:
+
+query MyQuery {
+allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "settings-seo"}}}) {
+nodes {
+frontmatter {
+title
+siteTitle
+templateKey
+path
+}
+}
+}
+}
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**

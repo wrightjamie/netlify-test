@@ -1,0 +1,118 @@
+.scroll-snap {
+  scroll-snap-type: y mandatory;
+  scroll-padding: var(--header-height);
+}
+
+.page {
+  scroll-snap-align: start;
+  height: 100vh;
+  background-color: var(--col-white);
+
+  .card:nth-child(2) {
+    grid-area: a;
+  }
+  .card:nth-child(3) {
+    grid-area: b;
+  }
+  .card:nth-child(4) {
+    grid-area: c;
+  }
+  .card:nth-child(5) {
+    grid-area: d;
+  }
+}
+.grid__hero {
+  grid-template:
+    "header header" auto
+    "a b" 1fr
+    "footer footer" auto/
+    1fr 1fr;
+  @media (orientation: portrait) {
+    grid-template:
+      "header" auto
+      "a" 1fr
+      "b" 1fr
+      "footer" auto;
+  }
+}
+
+.page__grid {
+  grid-template:
+    "header header header" auto
+    "a b c" 1fr
+    "footer footer footer" auto;
+  @media (orientation: portrait) {
+    grid-template:
+      "header" auto
+      "a" 1fr
+      "b" 1fr
+      "c" 1fr
+      "footer" auto;
+  }
+}
+
+.page__grid--double {
+  grid-template:
+    "header header header" auto
+    "a a b" 1fr
+    "c d d" 1fr
+    "footer footer footer" auto;
+  @media (orientation: portrait) {
+    grid-template:
+      "header header" auto
+      "a a" 1fr
+      "b c" 1fr
+      "d d" 1fr
+      "footer footer" auto;
+  }
+}
+.page__grid--chequer {
+  grid-template:
+    "header header" auto
+    "a b" 1fr
+    "c d" 1fr
+    "footer footer" auto /
+    1fr 1fr;
+  @media (orientation: portrait) {
+    grid-template:
+      "header" auto
+      "a" 1fr
+      "b" 1fr
+      "c" 1fr
+      "d" 1fr
+      "footer" auto/
+      1fr;
+  }
+  h3 {
+    font-size: var(--f-s-600);
+    font-weight: var(--f-w-500);
+    font-variant: small-caps;
+    align-self: center;
+    justify-self: center;
+    color: var(--col-light);
+    padding: var(--gap) var(--gap) 0;
+  }
+  p {
+    padding: var(--gap);
+    color: var(--col-white);
+  }
+}
+
+.page__header {
+  grid-area: header;
+  font-weight: var(--f-w-600);
+  font-size: clamp(2rem, -6rem + 24vw, 3rem);
+  font-variant: small-caps;
+  word-spacing: -0.5ex;
+  &:before {
+    content: "#";
+  }
+}
+
+.page__footer {
+  width: 100%;
+  grid-area: footer;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}

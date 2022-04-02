@@ -1,0 +1,42 @@
+.hero {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero--image1 {
+  background-image: url("/assets/img/advTrg.jpg");
+}
+.hero--image2 {
+  background-image: url("/assets/img/glider.jpg");
+}
+
+.hero__title {
+  grid-area: header;
+}
+
+.hero__summary--left {
+  grid-area: a;
+}
+.hero__summary--right {
+  grid-area: b;
+}
+
+[class^="hero__summary"] {
+  padding: var(--gap);
+  color: var(--col-light);
+  background-color: var(--col-img-cover);
+  align-self: center;
+}
+
+.hero__header {
+  font-size: var(--f-s-700);
+  font-weight: var(--f-w-500);
+  color: var(--col-white);
+}
+
+.hero .page__header {
+  background-color: var(--col-img-cover);
+  color: var(--col-white);
+  padding-inline: var(--gap);
+}

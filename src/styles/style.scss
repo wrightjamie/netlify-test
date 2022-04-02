@@ -1,3 +1,45 @@
+//Setup
+@import "variables";
+@import "reset";
+@import "utilities";
+//pages
+@import "page/home";
+@import "page/blog";
+@import "page/collection";
+//elements
+@import "elements/header";
+@import "elements/card";
+@import "elements/hero";
+@import "elements/footer";
+@import "elements/gallery";
+@import "elements/banner";
+
+html {
+  font-size: var(--f-s-base);
+  font-family: var(--f-sans);
+  color: var(--col-text);
+}
+
 body {
-  background-color: blue;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.main {
+  background-color: var(--col-light);
+  //min-height: 100vh;
+  flex-grow: 1;
+  & > * {
+    padding: var(--gap) var(--gap) calc(var(--gap) + var(--header-height));
+  }
+}
+
+p {
+  padding-block: var(--gap);
 }

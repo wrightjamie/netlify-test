@@ -1,0 +1,6 @@
+.grid__collection {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  --f-s-heading: var(--f-s-500);
+  --f-lh-heading: 2;
+}

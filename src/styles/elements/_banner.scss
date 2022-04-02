@@ -1,0 +1,52 @@
+.banner {
+  z-index: -1;
+  background-color: transparent;
+
+  &__layout {
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline: var(--gap);
+    background-color: var(--col-img-cover);
+  }
+  &__logo {
+    flex-basis: 100%;
+    padding: var(--gap);
+    display: grid;
+    justify-content: end;
+  }
+  &__title {
+    flex: 1 1 60%;
+  }
+  &__summary {
+    flex: 1 0 250px;
+    color: var(--col-light);
+    padding: var(--gap);
+  }
+
+  &__heading {
+    font-variant: small-caps;
+    font-size: var(--f-s-900);
+    font-weight: var(--f-w-900);
+    color: var(--col-light);
+  }
+
+  &__subtitle {
+    font-size: var(--f-s-700);
+    font-weight: var(--f-w-600);
+    font-style: italic;
+    color: var(--col-accent);
+  }
+
+  &__social {
+    flex-basis: 100%;
+    justify-content: end;
+    color: var(--col-light);
+    a:hover {
+      color: var(--col-heading);
+    }
+    svg {
+      fill: currentColor;
+      height: 2em;
+    }
+  }
+}
