@@ -1,4 +1,4 @@
 ---
-siteTitle: Test test test
+siteTitle: SEO Settings Title
 templateKey: settings-seo
 ---
